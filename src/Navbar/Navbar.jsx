@@ -1,13 +1,20 @@
 import React from 'react'
+import Logo from '../Assets/Pakaian-Logo.png'
 
 function Navbar() {
   return (
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      
         <div className="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
-       
+        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src={Logo} className="h-8" alt="Logo Toko" />
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              Aurora Store
+            </span>
+          </a>
       {/* Search Bar */}
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md flex items-center justify-center flex-wrap ">
         
       </div>
           <div className="flex md:order-10">
