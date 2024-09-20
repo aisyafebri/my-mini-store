@@ -1,5 +1,6 @@
 import React from 'react';
 import DownloadButtons from './DownloadButtons';
+import FundraiserCard from './FundraiserCard';
 
 const Banner = () => {
   const styles = {
@@ -13,7 +14,7 @@ const Banner = () => {
       
     },
     bannerContent: {
-      backgroundColor: '#76A9FA',
+      backgroundColor: '#87CEFA',
       borderRadius: '15px',
       padding: '20px',
       maxWidth: '500px',
@@ -49,7 +50,8 @@ const Banner = () => {
   };
 
   return (
-    <div style={styles.bannerContainer}>
+    
+      <div style={styles.bannerContainer}>
       <div style={styles.bannerContent}>
         <br />
         <br />
@@ -66,6 +68,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
+   
   );
 };
 

@@ -14,7 +14,7 @@ const SearchBar = () => {
 
   return (
     <div className={`w-full ${isFixed ? 'fixed top-0 left-0 z-10' : ''}`}>
-      <div className="bg-sky-500 p-4">
+      <div className="bg-sky-300 p-4">
         <div className="relative max-w-md mx-auto">
           <input
             type="text"

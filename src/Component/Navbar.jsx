@@ -3,13 +3,11 @@ import SearchBar from './SearchBar';
 
 const Navbar = () => {
   return (
-    <nav className="bg-white shadow">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav className="fixed static-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200">
+      <div className="h-full max-w-lg grid-cols-4 mx-auto">
           <div className="flex-1 flex items-center justify-center">
             <SearchBar />
           </div>
-        </div>
       </div>
     </nav>
   );
