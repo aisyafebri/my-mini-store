@@ -1,21 +1,18 @@
-import './App.css';
-import CenteredContent from './CenteredContent';
-import Footer from './Footer/Footer';
-import Navbar from './Navbar/Navbar';
-import Logo from './Assets/Pakaian-Logo.png'; // Sesuaikan path file Navbar.jsx
+import React from 'react';
+import Navbar from './Component/Navbar';
+import NavBawah from './Component/NavBawah';
+import CenteredContent from './Component/CenteredContent';
 
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-     
+    <div className="my-0 mx-auto min-h-screen max-w-480 overflow-x-hidden bg-white-500 pb-[66px]">
       <Navbar />
       <CenteredContent />
-      <CenteredContent />
-      <CenteredContent />
-      <Footer />
+      <NavBawah />
     </div>
   );
-}
+};
 
 export default App;
