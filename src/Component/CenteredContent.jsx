@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import FundraiserCard from './FundraiserCard';
+import ButtonCenter from './ButtonCenter';
  
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Banner />
       <br />
       <FundraiserCard />
+      <ButtonCenter />
     </div>
   );
 };
