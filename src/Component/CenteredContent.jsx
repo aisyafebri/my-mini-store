@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 import FundraiserCard from './FundraiserCard';
 import ButtonCenter from './ButtonCenter';
+import NewsPenggalangan from './NewsPenggalangan';
  
 const App = () => {
   return (
@@ -9,6 +10,10 @@ const App = () => {
       <Banner />
       <FundraiserCard />
       <ButtonCenter />
+      <NewsPenggalangan />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

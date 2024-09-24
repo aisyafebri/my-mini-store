@@ -12,7 +12,7 @@ const ButtonCenter = () => {
 
   return (
     <div className="container mx-auto ">
-      <h2 className="text-xl font-semibold mb-4 text-center">Mau berbuat baik apa hari ini?</h2>
+      <h2 className="text-base font-semibold text-center">Mau berbuat baik apa hari ini?</h2>
       <div className="grid h-full max-w-lg grid-cols-4 mx-auto">
         {deeds.map((deed) => (
           <div key={deed.name} className="flex flex-col items-center">
