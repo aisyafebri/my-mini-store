@@ -7,7 +7,6 @@ const App = () => {
   return (
     <div>
       <Banner />
-      <br />
       <FundraiserCard />
       <ButtonCenter />
     </div>

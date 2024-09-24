@@ -1,6 +1,7 @@
 import React from 'react';
 import DownloadButtons from './DownloadButtons';
 import FundraiserCard from './FundraiserCard';
+import SearchBar from './SearchBar';
 
 const Banner = () => {
   const styles = {
@@ -10,13 +11,12 @@ const Banner = () => {
       justifyContent: 'center',
       alignItems: 'center',
       height: '60hv',
-      padding: '10px',
+    
       
     },
     bannerContent: {
-      backgroundColor: '#87CEFA',
+      backgroundColor: '#3ea8ef',
       borderRadius: '15px',
-      padding: '20px',
       maxWidth: '500px',
       height:'50hv',
       width: '70%',
@@ -26,11 +26,11 @@ const Banner = () => {
     bannerTextH1: {
       fontSize: '24px',
       fontWeight: 'bold',
-      color: '#003366'
+      color: '#ffffff'
     },
     bannerTextP: {
       fontSize: '16px',
-      color: '#003366',
+      color: '#ffffff',
       marginTop: '10px'
     },
     bannerImage: {
@@ -53,9 +53,7 @@ const Banner = () => {
     
       <div style={styles.bannerContainer}>
       <div style={styles.bannerContent}>
-        <br />
-        <br />
-        <br />
+        <SearchBar />
         <div style={styles.bannerText}>
           <h1 style={styles.bannerTextH1}>Saling Jaga Se-Indonesia ID</h1>
           <p style={styles.bannerTextP}>Bantu Sesama, Dibantu Bersama</p>

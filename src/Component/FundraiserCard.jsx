@@ -2,12 +2,12 @@ import React from 'react';
 
 const FundraiserCard = () => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mt-8 max-w-xl mx-auto flex items-center justify-between">
+    <div className="bg-white rounded-lg shadow-md  mt-8 max-w-md mx-auto flex items-center justify-between">
       <div className="flex items-center">
-        <img src="https://kitabisa.com/images/illustration/galang-dana-sekarang.svg" alt="Fundraiser" className="w-12 h-12 mr-4" />
-        <p className="text-lg font-semibold">Buat galang dana untuk ajak ribuan orang baik berdonasi</p>
+        <img src="https://kitabisa.com/images/illustration/galang-dana-sekarang.svg" alt="Fundraiser" className="w-50 h-auto mr-8" />
+        <h1 className="text-lg font-bold">Buat galang dana untuk ajak ribuan orang baik berdonasi</h1>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
       </svg>
     </div>
