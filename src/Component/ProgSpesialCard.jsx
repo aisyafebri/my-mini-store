@@ -50,7 +50,7 @@ function ProgSpesialCard() {
               key={index}
               className="w-full md:w-1/3 p-4 flex-shrink-0"
               style={{ minWidth: '100%' }}
-            >
+            > 
               <div className="bg-white rounded-lg shadow-lg p-4 w-full">
                 <img src={card.image} alt={`Gambar ${index + 1}`} className="w-full rounded-lg" />
                 <h3 className="text-lg font-semibold mt-4">{card.title}</h3>
