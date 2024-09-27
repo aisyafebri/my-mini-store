@@ -1,40 +1,81 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-function Slidebar() {
-  const [progress, setProgress] = useState(40); // Initial progress (percentage)
+function Slidebar({ totalSlides, currentSlide, onSlideChange }) {
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const sliderRef = useRef(null);
 
-  const nextSlide = () => {
-    setProgress((prev) => (prev >= 100 ? 100 : prev + 10)); // Increment by 10
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (slider) {
+      slider.scrollLeft = (currentSlide / totalSlides) * slider.scrollWidth;
+    }
+  }, [currentSlide, totalSlides]);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - sliderRef.current.offsetLeft);
+    setScrollLeft(sliderRef.current.scrollLeft);
   };
 
-  const prevSlide = () => {
-    setProgress((prev) => (prev <= 0 ? 0 : prev - 10)); // Decrement by 10
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    const walk = (x - startX) * 3;
+    sliderRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleSliderChange = () => {
+    const slider = sliderRef.current;
+    const newSlide = Math.round((slider.scrollLeft / slider.scrollWidth) * totalSlides);
+    onSlideChange(newSlide);
+  };
+
+  const handlePrev = () => {
+    onSlideChange(Math.max(0, currentSlide - 1));
+  };
+
+  const handleNext = () => {
+    onSlideChange(Math.min(totalSlides, currentSlide + 1));
   };
 
   return (
-    <div className="flex items-center justify-center w-full my-8">
-      {/* Left Button */}
+    <div className="flex items-center justify-between mt-4">
       <button
-        onClick={prevSlide}
-        className="bg-gray-300 text-black p-2 rounded-full hover:bg-gray-400 focus:outline-none"
+        onClick={handlePrev}
+        className="px-2 py-1 bg-gray-200 rounded-md text-sm"
       >
-        &#9664; {/* Left Arrow */}
+        &#10094;
       </button>
-
-      {/* Progress Bar */}
-      <div className="relative w-full max-w-2xl h-8 mx-4 bg-gray-200 rounded-lg">
+      <div
+        ref={sliderRef}
+        className="w-48 h-4 bg-gray-200 rounded-md overflow-hidden cursor-pointer"
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onScroll={handleSliderChange}
+      >
         <div
-          className="bg-gray-400 h-full rounded-lg"
-          style={{ width: `${progress}%` }}
+          className="h-full bg-gray-500 rounded-md"
+          style={{ width: `${100 / (totalSlides + 1)}%`, transform: `translateX(${currentSlide * 100}%)` }}
         ></div>
       </div>
-
-      {/* Right Button */}
       <button
-        onClick={nextSlide}
-        className="bg-gray-300 text-black p-2 rounded-full hover:bg-gray-400 focus:outline-none"
+        onClick={handleNext}
+        className="px-2 py-1 bg-gray-200 rounded-md text-sm"
       >
-        &#9654; {/* Right Arrow */}
+        &#10095;
       </button>
     </div>
   );

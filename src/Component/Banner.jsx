@@ -1,7 +1,7 @@
 import React from 'react';
 import DownloadButtons from './DownloadButtons';
-import FundraiserCard from './FundraiserCard';
 import SearchBar from './SearchBar';
+import Gambar from '../Assets/gam1.png';
 
 const Banner = () => {
   const styles = {
@@ -33,11 +33,17 @@ const Banner = () => {
       color: '#ffffff',
       marginTop: '10px'
     },
+    bannerImageContainer: {
+      width: '100%',
+      height: '200px', // Adjust this value as needed
+      overflow: 'hidden',
+    },
     bannerImage: {
-    width: '100%',
-    height:'auto' , 
-    objectfit:'cover',
-    borderradius: '12px',
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      borderBottomLeftRadius: '15px',
+      borderBottomRightRadius: '15px',
     },
     bannerButtons: {
       display: 'flex',
@@ -46,7 +52,16 @@ const Banner = () => {
     mobileButton: {
       marginBottom: '5px',
       width: '50%'
+    },
+    fundraiserCardContainer: {
+      position: 'absolute',
+      bottom: '-30px', // Adjust this value to control how much it overlaps
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '90%', // Adjust as needed
+      maxWidth: '500px', // Should match or be less than bannerContent maxWidth
     }
+
   };
 
   return (
@@ -61,10 +76,11 @@ const Banner = () => {
         </div>
         <br />
       <DownloadButtons />
-        <div className="bannerImage">
-          <img src="https://kitabisa.com/images/illustration/bg-hero.png" alt="Banner Image" fetchPriority='high' style={styles.bannerImage} />
+      <div style={styles.bannerImageContainer}>
+          <img src={Gambar} alt="Banner Image" fetchPriority='high' style={styles.bannerImage} />
         </div>
       </div>
+      
     </div>
    
   );

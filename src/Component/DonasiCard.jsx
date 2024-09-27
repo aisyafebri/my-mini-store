@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 function DonasiCard() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    'https://via.placeholder.com/400x300?text=Gambar+1',
-    'https://via.placeholder.com/400x300?text=Gambar+2',
-    'https://via.placeholder.com/400x300?text=Gambar+3',
-    'https://via.placeholder.com/400x300?text=Gambar+4',
-    'https://via.placeholder.com/400x300?text=Gambar+5'
+    'https://kitabisa.com/_next/image?url=https%3A%2F%2Fgudang-prod.kitabisa.com%2Fimages%2F77005399-7a1b-11ef-9b0d-3e503950e173_6110FF1E712BF1E2.jpg%3Fauto%3Dcompress%2Cformat%26cs%3Dtinysrgb%26fm%3Dpjpg%26fit%3Dclip%26w%3D448%26dpr%3D2%26sharp%3D15&w=1920&q=75',
+    'https://kitabisa.com/_next/image?url=https%3A%2F%2Fgudang-prod.kitabisa.com%2Fimages%2F7be3a3f9-7a1b-11ef-9b0d-3e503950e173_657E5722E5010686.jpg%3Fauto%3Dcompress%2Cformat%26cs%3Dtinysrgb%26fm%3Dpjpg%26fit%3Dclip%26w%3D448%26dpr%3D2%26sharp%3D15&w=1920&q=75',
+    'https://kitabisa.com/_next/image?url=https%3A%2F%2Fgudang-prod.kitabisa.com%2Fimages%2F80d1f67b-7a1b-11ef-9b0d-3e503950e173_EB7C3EBEA25B5AAC.jpg%3Fauto%3Dcompress%2Cformat%26cs%3Dtinysrgb%26fm%3Dpjpg%26fit%3Dclip%26w%3D448%26dpr%3D2%26sharp%3D15&w=1920&q=75',
+    'https://kitabisa.com/_next/image?url=https%3A%2F%2Fgudang-prod.kitabisa.com%2Fimages%2Fbaae9d0c-7a1b-11ef-9b0d-3e503950e173_612AB29A7759A5F.png%3Fauto%3Dcompress%2Cformat%26cs%3Dtinysrgb%26fm%3Dpjpg%26fit%3Dclip%26w%3D448%26dpr%3D2%26sharp%3D15&w=1920&q=75',
+    
   ];
 
   // Auto-slide setiap 3 detik
@@ -19,8 +19,8 @@ function DonasiCard() {
   }, [slides.length]);
 
   return (
-    <div className="bg-white rounded-lg shadow-md mt-8 max-w-md mx-auto p-4">
-      <div className="p-4">
+    <div className="bg-white rounded-lg shadow-md mt-8 max-w-md mx-auto ">
+      <div >
         <h2 className="text-xl font-bold">Rekomendasi Kegiatan Baik</h2>
 
         {/* Carousel */}
@@ -51,9 +51,7 @@ function DonasiCard() {
         </div>
 
         {/* Tombol Aksi */}
-        <button className="bg-green-500 text-white font-bold rounded-full px-4 py-2 mt-4">
-          Sedekah Sekarang
-        </button>
+        
       </div>
     </div>
   );

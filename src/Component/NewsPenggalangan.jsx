@@ -2,12 +2,12 @@ import React from "react";
 
 const NewsPenggalangan = () => {
   return (
-    <div className="container mx-auto">
+    <div className="bg-white rounded-lg shadow-md mt-8 max-w-md mx-auto p-4">
       <h2 className="text-xl font-bold text-left mb-4">
         Penggalangan Dana Mendesak
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-sm mx-auto scale-60 h-72">
+      <div className="bg-white rounded-lg shadow-md mt-8 max-w-md mx-auto p-4">
         {/* Kartu Pertama */}
         <div className="bg-white rounded-lg shadow-md p-4">
           <div className="relative">
