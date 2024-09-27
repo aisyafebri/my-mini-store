@@ -14,9 +14,6 @@ const App = () => {
       <FundraiserCard />
       <ButtonCenter />
       <NewsPenggalangan />
-      <br />
-      <br />
-      <br />
       <DonasiCard />
       <br />
       <ProgSpesialCard />
