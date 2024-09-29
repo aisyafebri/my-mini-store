@@ -5,6 +5,9 @@ import ButtonCenter from './ButtonCenter';
 import NewsPenggalangan from './NewsPenggalangan';
 import DonasiCard from './DonasiCard';
 import ProgSpesialCard from './ProgSpesialCard';
+import Buttonfav from './Buttonfav';
+import News from './News';
+import PilKitaBisa from './PilKitaBisa';
 
  
 const App = () => {
@@ -15,9 +18,10 @@ const App = () => {
       <ButtonCenter />
       <NewsPenggalangan />
       <DonasiCard />
-      <br />
       <ProgSpesialCard />
-      
+      <PilKitaBisa />
+      <Buttonfav />
+      <News />
     </div>
   );
 };

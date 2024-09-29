@@ -195,8 +195,6 @@ const PilKitaBisa = () => {
           &#10095;
         </button>
       </div>
-     
-      <h3 className="text-lg font-semibold mt-6 mb-4">Pilih Kategori Favoritmu</h3>
     </div>  
   );
 };

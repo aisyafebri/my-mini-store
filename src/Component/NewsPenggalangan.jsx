@@ -1,155 +1,126 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const NewsPenggalangan = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollRef = useRef(null);
   const campaigns = [
     {
-      image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F1d8e955e-829b-451c-a37c-2dfadd3f0c63.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-      title: 'Sedekah Berbagi Alat Sekolah tuk Siswa Dhuafa',
-      organization: 'Yayasan Ruang Sejahtera Umat',
+      image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F11b78112-ae8b-4c95-be6e-75e3cce8de57.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
+      title: 'SUMBER PAHALA: Sedekah Bangun Masjid Pasca-Bencana',
+      organization: 'Baitul Maal Itqan',
       isVerified: true,
-      description: 'Terkumpul',
-      amount: 'Rp24.218.439',
-      progress: 30,
-      daysLeft: 38,
+      description: 'Tersedia',
+      amount: 'Rp119.039.938',
+      progress: 40,
     },
     {
-      image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F6c1702a2-283a-4d16-abb2-bd5399f71d65.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-      title: 'Sedekah Subuh Bantu Difabel Pencari Nafkah ',
-      organization: 'Yayasan Cahaya Sedekah Kebaikan',
+      image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F75c44db4-3ca1-4699-aa60-3585187bac97.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
+      title: 'SEDEKAH JUMAT Sisihkan Rezeki Berbagi 1000 Qur`an',
+      organization: 'Penderma.id',
       isVerified: true,
       description: 'Terkumpul',
-      amount: 'Rp26.770.317',
+      amount: 'Rp55.047.523',
       progress: 20,
-      daysLeft: 21,
+      daysLeft: 32,
     },
     {
-      image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2Fabb98e84-f729-42e7-b7e7-26596dc94402.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-      title: 'Pahala Mengalir Deras,Sedekah Air untuk Sesama',
-      organization: 'Yayasan Gugah Nurani Indonesia',
+      image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F1fbe1870-bb37-46a3-b9da-036e8b447913.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
+      title: 'JUM`AT BERKAH! Berbagi Makanan tuk Saudara Dhuafa',
+      organization: 'Jagabersama',
       isVerified: true,
-      description: 'Terkumpul',
-      amount: 'Rp122.572.374',
+      description: 'Tersedia',
+      amount: 'Rp55.172.627',
       progress: 100,
-      daysLeft: 53,
     },
-    {
-      image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2Fee440aa7-8405-41c0-9a36-e281a2bc0d09.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-      title: 'Makan Lauk Seadanya Hanya 15Rb Bisa Sedekah Makan',
-      organization: 'Insan Cendekia Gemilang Foundation',
-      isVerified: true,
-      description: 'Terkumpul',
-      amount: 'Rp26.344.979',
-      progress: 20,
-      daysLeft: 59,
-    },
-    {
-      image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2Fd35847c5-2036-41dc-bac2-be5501556ada.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-      title: 'Diupah Seikhlasnya, Bantu Guru Ngaji Hidup Layak',
-      organization: 'Yayasan Madinatur Rahmah Hidayah',
-      isVerified: true,
-      description: 'Terkumpul',
-      amount: 'Rp4.693.077',
-      progress: 5,
-      daysLeft: 95,
-    },
-    {
-        image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F2a1c8a46-71cd-4579-b671-c9cfe9c8e3a9.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-        title: 'Sedekah Berbagi Alat Sekolah tuk Siswa Dhuafa',
-        organization: 'Yayasan Winakara',
-        isVerified: true,
-        description: 'Terkumpul',
-        amount: 'Rp56.780.084',
-        progress: 40,
-        daysLeft: 69,
-      },
-      {
-        image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2Fd746a2fd-1c17-408f-b48a-66fd1d8e9108.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-        title: 'Sedekah Subuh tuk 100+ Pejuang Nafkah Keluarga',
-        organization: 'Salam Setara',
-        isVerified: true,
-        description: 'Terkumpul',
-        amount: 'Rp120.290.239',
-        progress: 100,
-      },{
-        image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2Ff673d141-8179-49eb-b764-df8969abae50.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-        title: 'Lahir Sumbing,Temani Adik Kecil Berjuang Sembuh!',
-        organization: 'Penghubung Kebaikan',
-        isVerified: true,
-        description: 'Terkumpul',
-        amount: 'Rp67.223.619',
-        progress: 60,
-        daysLeft: 74,
-      },
-      {
-        image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F6831afa6-65b0-4dcb-a5a2-84ebef729577.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-        title: 'Berkah Melimpah! Santunan tuk 1000+ Yatim Sekolah',
-        organization: 'Kitabisa.org',
-        isVerified: true,
-        description: 'Tersedia',
-        amount: 'Rp79.877.522',
-        progress: 60,
-      },
-      {
-        image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F0f845b70-98fb-423c-9d58-f3a6240474cf.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-        title: 'Gerobak Darimu Selamatkan Hidup Banyak Keluarga!',
-        organization: 'CollabForChange',
-        isVerified: true,
-        description: 'Terkumpul',
-        amount: 'Rp132.347.713',
-        progress: 90,
-        daysLeft: 95,
-      },
-      {
-        image: 'https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2Fd35847c5-2036-41dc-bac2-be5501556ada.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75',
-        title: 'Selamatkan Anak Dhuafa tuk Kesehatan Lebih Baik',
-        organization: 'Penghubung Kebaikan',
-        isVerified: true,
-        description: 'Terkumpul',
-        amount: 'Rp1.277.000',
-        progress: 10,
-        daysLeft: 95,
-      },
-
   ];
+
+  const cardsPerView = 2;
+  const totalSlides = Math.ceil(campaigns.length / cardsPerView);
+
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide - 1 + totalSlides) % totalSlides);
+  };
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: currentSlide * 256, // 256px is the width of each card (w-64)
+        behavior: 'smooth'
+      });
+    }
+  }, [currentSlide]);
 
   return (
     <div className="max-w-md mx-auto bg-white p-4">
       <h2 className="text-xl font-bold mb-4">Pilihan Jumat Berkah</h2>
       
-      <div className="relative overflow-x-auto">
-        <div className="flex space-x-4">
-          {campaigns.map((campaign, index) => (
-            <div key={index} className="w-64 flex-shrink-0 border rounded-lg overflow-hidden shadow-md">
-              <div className="relative">
-                <img src={campaign.image} alt={campaign.title} className="w-full h-32 object-cover" />
-                {campaign.daysLeft && (
-                  <div className="absolute top-2  bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-                    {campaign.daysLeft} hari lagi
+      <div className="relative">
+        <div 
+          ref={scrollRef}
+          className="overflow-x-auto flex space-x-4"
+          style={{ scrollSnapType: 'x mandatory' }}
+        >
+          <div 
+            className="flex transition-transform duration-300 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {campaigns.map((campaign, index) => (
+              <div key={index} className="w-1/2 flex-shrink-0 px-2">
+                <div className="border rounded-lg overflow-hidden shadow-md">
+                  <div className="relative">
+                    <img src={campaign.image} alt={campaign.title} className="w-full h-32 object-cover" />
+                    {campaign.daysLeft && (
+                      <div className="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
+                        {campaign.daysLeft} hari lagi
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-              <div className="p-3">
-                <div className="flex items-center mb-1">
-                  <span className="text-xs text-gray-600 mr-1">{campaign.organization}</span>
-                  {campaign.isVerified && (
-                    <svg className="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  )}
+                  <div className="p-3">
+                    <div className="flex items-center mb-1">
+                      <span className="text-xs text-gray-600 mr-1">{campaign.organization}</span>
+                      {campaign.isVerified && (
+                        <svg className="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                    </div>
+                    <h3 className="text-sm font-semibold mb-1">{campaign.title}</h3>
+                    <p className="text-xs text-gray-600 mb-2">{campaign.description}</p>
+                    <p className="text-sm font-bold text-blue-600">{campaign.amount}</p>
+                    <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2">
+                      <div className="bg-blue-600 h-1.5 rounded-full" style={{ width: `${campaign.progress}%` }}></div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-sm font-semibold mb-1">{campaign.title}</h3>
-                <p className="text-xs text-gray-600 mb-2">{campaign.description}</p>
-                <p className="text-sm font-bold text-blue-600">{campaign.amount}</p>
-                <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2">
-                  <div className="bg-blue-600 h-1.5 rounded-full" style={{ width: `${campaign.progress}%` }}></div>
-                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        <button
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white p-2 rounded-full text-xs z-10"
+          onClick={prevSlide}
+        >
+          &#10094;
+        </button>
+        <button
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white p-2 rounded-full text-xs z-10"
+          onClick={nextSlide}
+        >
+          &#10095;
+        </button>
       </div>
     </div>  
   );
 };
 
 export default NewsPenggalangan;
+
+
+
+
+
+
