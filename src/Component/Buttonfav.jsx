@@ -11,7 +11,7 @@ const Buttonfav = () => {
   return (
     <div className="max-w-md mx-auto bg-gray-100 p-4">
       <h2 className="text-lg font-bold mb-4">Pilih Kategori Favoritmu</h2>
-      
+      <a href="">
       <div className="flex justify-between mb-6">
         {categories.map((categories, index) => (
           <div key={index} className="flex flex-col items-center">
@@ -22,6 +22,8 @@ const Buttonfav = () => {
           </div>
         ))}
       </div>
+      </a>
+
     </div>
   );
 };

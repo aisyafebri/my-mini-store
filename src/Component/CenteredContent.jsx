@@ -8,6 +8,8 @@ import ProgSpesialCard from './ProgSpesialCard';
 import Buttonfav from './Buttonfav';
 import News from './News';
 import PilKitaBisa from './PilKitaBisa';
+import Pray from './Pray';
+import Informaricard from './Informasicard';
 
  
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
       <PilKitaBisa />
       <Buttonfav />
       <News />
+      <Pray />
+      <Informaricard />
     </div>
   );
 };
